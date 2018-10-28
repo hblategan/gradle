@@ -48,7 +48,5 @@ public interface ComponentResolutionState extends StringVersioned {
 
     boolean isRejected();
 
-    void unmatched(Collection<RejectedBySelectorVersion> unmatchedVersions);
-
     void rejected(Collection<RejectedVersion> rejectedVersions);
 }
