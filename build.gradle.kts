@@ -51,8 +51,8 @@ buildTypes {
 
     create("sanityCheck") {
         tasks(
-            "classes", "doc:checkstyleApi", "codeQuality", "allIncubationReportsZip",
-            "docs:check", "distribution:checkBinaryCompatibility", "javadocAll",
+            "classes", "codeQuality", "allIncubationReportsZip",
+            "distribution:checkBinaryCompatibility",
             "architectureTest:test")
     }
 
@@ -123,14 +123,14 @@ buildTypes {
     // Used to build production distros and smoke test them
     create("packageBuild") {
         tasks(
-            "verifyIsProductionBuildEnvironment", "clean", "buildDists",
+            "clean", "buildDists",
             "distributions:integTest")
     }
 
     // Used to build production distros and smoke test them
     create("promotionBuild") {
         tasks(
-            "verifyIsProductionBuildEnvironment", "clean", "docs:check",
+            "clean", "docs:check",
             "buildDists", "distributions:integTest", "uploadArchives")
     }
 
